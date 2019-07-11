@@ -13,10 +13,7 @@ export class ProjectItemComponent implements OnInit {
   desc: string;
   @Input()
   img: string;
-  constructor(project: Project) {
-    this.desc = project.desc;
-    this.name = project.name;
-    this.img = project.imgpath;
+  constructor() {
   }
 
   ngOnInit() {

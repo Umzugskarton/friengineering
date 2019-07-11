@@ -8,12 +8,17 @@ import {Project} from '../projects.model';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
-  projects: Project[] = [
-    new Project('Trace Lab', 'Project Desription', 'https://www.electronicdesign.com/sites/electronicdesign.com' +
-      '/files/styles/article_featured_standard/public/Hansen_Report_Lead.jpg?itok=u4UfwxKO')
-  ];
+  projects: Project[];
 
-  constructor() { }
+  constructor() {
+    this.projects = [];
+    this.projects.push(
+      new Project('Trace Lab', 'Project Desription', 'https://www.electronicdesign.com/sites/electronicdesign.com' +
+      '/files/styles/article_featured_standard/public/Hansen_Report_Lead.jpg?itok=u4UfwxKO'),
+      new Project('Trace Lab', 'Project Desription', 'https://www.electronicdesign.com/sites/electronicdesign.com' +
+      '/files/styles/article_featured_standard/public/Hansen_Report_Lead.jpg?itok=u4UfwxKO')
+    );
+  }
 
   ngOnInit() {
   }

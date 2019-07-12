@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Project} from '../projects.model';
 
 
@@ -8,16 +8,15 @@ import {Project} from '../projects.model';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
-  projects: Project[];
+  @Output() projectCreated = new EventEmitter<Project>();
+  @Input() projects: Project[];
+  newProjectName = 'Sample Project';
+  newProjectDesc = 'Sample Description';
+  newProjectImg = 'https://www.electronicdesign.com/sites/electronicdesign.com' +
+    '/files/styles/article_featured_standard/public/Hansen_Report_Lead.jpg?itok=u4UfwxKO';
 
-  constructor() {
-    this.projects = [];
-    this.projects.push(
-      new Project('Trace Lab', 'Project Desription', 'https://www.electronicdesign.com/sites/electronicdesign.com' +
-      '/files/styles/article_featured_standard/public/Hansen_Report_Lead.jpg?itok=u4UfwxKO'),
-      new Project('Trace Lab', 'Project Desription', 'https://www.electronicdesign.com/sites/electronicdesign.com' +
-      '/files/styles/article_featured_standard/public/Hansen_Report_Lead.jpg?itok=u4UfwxKO')
-    );
+  onCreateProject() {
+    this.projectCreated.emit(new Project(this.newProjectName, this.newProjectDesc, this.newProjectImg));
   }
 
   ngOnInit() {

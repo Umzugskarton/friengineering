@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-details.component.css']
 })
 export class ProjectDetailsComponent implements OnInit {
-
+  name = 'TEST';
+  desc = 'Test description';
+  party = 'Me, you, them';
   constructor() { }
 
   ngOnInit() {

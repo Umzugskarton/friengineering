@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+    <app-active-edit></app-active-edit>
+    <hr>
+    <ul class="list-group">
+      <a class="list-group-item" style="cursor: pointer"
+      *ngFor="let activity of activities">
+        <span class="glyphicon glyphicon-flash yellow"></span>
+        <b> {{activity.name}}</b>&nbsp;&nbsp;|&nbsp;
+        <span class="glyphicon glyphicon-fire yellow"></span> {{activity.priority}}
+        <span style="float: right">Status : <span [className]="activity.statusColor">{{activity.status}}</span></span>
+      </a>
+    </ul>
+  </div>
+</div>

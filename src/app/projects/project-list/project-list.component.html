@@ -1,12 +1,17 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success">New Project</button>
+    <input type="text" class="form-control"[ngModel]="newProjectName">
+    <input type="text" class="form-control"[ngModel]="newProjectDesc">
+    <button class="btn btn-success" (click)="onCreateProject()">New Project</button>
   </div>
 </div>
-
+<hr>
 <div class="row">
   <div class="col-xs-12">
-      <app-project-item *ngFor="let p of projects" [name]="p.name" [desc]="p.desc" [img]="p.imgpath"></app-project-item>
+    <a href="" class="list-group-item clearfix" *ngFor="let p of projects" >
+      <app-project-item [name]="p.name" [desc]="p.desc" [img]="p.imgpath"></app-project-item>
+      <br>
+    </a>
   </div>
 </div>
 
